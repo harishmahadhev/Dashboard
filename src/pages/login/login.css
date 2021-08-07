@@ -163,6 +163,14 @@ hr {
     margin: 10px 0;
 }
 
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
 @media screen and (max-width : 600px) {
     .loginImg {
         width: 300px;
