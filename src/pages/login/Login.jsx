@@ -20,8 +20,6 @@ import * as api from "../../api/index";
 // import Facebook from "./facebook/Facebook";
 
 export default function Login() {
-  const ClientId =
-    "1043680528544-nje8p2g7e1sf2n7orpo5p7ki24ni0qkr.apps.googleusercontent.com";
   const [isSignup, setSignup] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const {
@@ -33,21 +31,21 @@ export default function Login() {
   });
 
   const handleshowpassword = () => setShowPassword((on) => !on);
-  const googleFailure = (err) => console.log(err, "Signin unsuccessfull");
+
   const inputProps = StyledTextField();
   const history = useHistory();
   const { dispatch } = useContext(storeCtx);
-
-  const googleSuccess = async (res) => {
-    const result = res?.profileObj;
-    const token = res?.tokenId;
-    try {
-      dispatch({ type: "AUTH", data: { result, token } });
-      history.push("/app/home");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //  const googleFailure = (err) => console.log(err, "Signin unsuccessfull");
+  //   const googleSuccess = async (res) => {
+  //     const result = res?.profileObj;
+  //     const token = res?.tokenId;
+  //     try {
+  //       dispatch({ type: "AUTH", data: { result, token } });
+  //       history.push("/app/home");
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
   const signup = async (formdata) => {
     try {
       const { data } = await api.signUp(formdata);

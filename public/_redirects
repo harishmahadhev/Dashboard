@@ -2,4 +2,8 @@
 /login /
 /forgotpassword
 /reset /reset:token
+<<<<<<< HEAD
 /app
+=======
+/app
+>>>>>>> 64e36bb0d85effd81967342668f5eb1405e6c920
